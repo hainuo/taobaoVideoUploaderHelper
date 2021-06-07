@@ -9,6 +9,13 @@ const url = chrome.extension.getURL('assets/elementuiplus.1.0.2.b45.css');
 console.log(url);
 
 function joinContent(element) {
+  //添加样式
+  const linkTag = document.createElement('link');
+  // <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
+  linkTag.setAttribute('rel', 'stylesheet');
+  linkTag.href = 'https://unpkg.com/element-plus/lib/theme-chalk/index.css';
+  document.getElementsByTagName('head')[0].appendChild(linkTag);
+  //添加代码挂载点
   const div = document.createElement('div')
   div.id = 'joinContentApp'
   document.body.appendChild(div);
@@ -19,11 +26,6 @@ function joinContent(element) {
 
   // const url = chrome.extension.getURL('assets/elementuiplus.1.0.2.b45.css');
   // console.log(url);
-  const linkTag = document.createElement('link');
-  // <link rel="stylesheet" href="https://unpkg.com/element-plus/lib/theme-chalk/index.css">
-  linkTag.setAttribute('rel', 'stylesheet');
-  linkTag.href = 'https://unpkg.com/element-plus/lib/theme-chalk/index.css';
-  document.getElementsByTagName('head')[0].appendChild(linkTag);
 }
 
 function injectJsInsert() {

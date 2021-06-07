@@ -24,7 +24,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://sucai.wangpu.taobao.com/#/manage/video?*"
+        "https://sucai.wangpu.taobao.com/*"
       ],
       "css": [
         "css/content.css",
